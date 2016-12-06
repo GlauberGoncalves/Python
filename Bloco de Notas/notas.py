@@ -3,13 +3,13 @@ option = 0
 notas = [0] * 100
 #--------------------------------------------------------------------
 # Cria o menu principal
-def menu():    
+def menu():
     print("Informe a opcao desejada\n")
     print("1: Cadastrar nova nota")
     print("2: Buscar nota")
     print("3: Apagar nota")
     print("4: Total de notas")
-    print("5: Total de notas")
+    print("5: Sair")
     return int(input("Opcao: ")) 
 #--------------------------------------------------------------------#
 # Cadastra nova nota
@@ -31,13 +31,33 @@ def buscaNota(notas):
     if(notas[numero_nota] != 0):
         print("------------------------------------")
         print("Aqui esta a nota numero ",numero_nota + 1,": ")
-        print("------------------------------------")
+        print("\n")
         print(notas[numero_nota])
         print("------------------------------------")
         return 1
     else:
         print("------------------------------------")
         return 0    
+#--------------------------------------------------------------------#
+# apagar notas
+
+def apagaNota(notas):
+  n = int(input("Informe o numero da nota"))
+  if(n>0 and n<=100):
+    notas[n-1] = 0
+    print("--------------------------------")
+    print("Nota apagada com sucesso")
+    return 1
+  else: return 0  
+#--------------------------------------------------------------------#
+# total de notas
+
+def totalNotas(notas):
+  count = 0
+  for i in range(0,100):
+    if notas[i] != 0:
+      count += 1
+  return count    
 
 #--------------------------------------------------------------------#
 # Inicio do programa
@@ -52,17 +72,17 @@ while option != 5:
             print("----------------------------")
             print("OK, nota gravada com sucesso")            
         print("--------------------------")
-    elif option == 2:        
+    elif option == 2: 
         if (not buscaNota(notas)): print("Erro ao buscar nota ")        
     elif option == 3:
         print("--------------------------")
-        print("\topcao 3")
+        apagaNota(notas)
         print("--------------------------")
     elif option == 4:
         print("--------------------------")
-        print("\topcao 4")
+        print("Total de notas: ",totalNotas(notas))
         print("--------------------------")
     elif option == 5:
         print("--------------------------")
-        print("\tAte Breve")
+        print("\tAté Breve")
         print("--------------------------")
