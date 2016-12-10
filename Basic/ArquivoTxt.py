@@ -3,9 +3,9 @@ import sys
 name = ' '
 age  = ' '
 hobby = ' '
-
 op = '1'
 
+# Gravando dados no arquivo
 while op == '1':
     name = input("What's your name? ")
     age  = input("What's your age? ")
@@ -26,3 +26,13 @@ while op == '1':
     file.write('\n')
     op = input("1 - cadastrar ")
 file.close()
+
+# Acessando dados de arquivo
+
+arquivo = open("peaple.db","r")
+
+for i in file.readline():
+    print(file)
+    
+    
+arquivo.close()
