@@ -1,0 +1,13 @@
+caracteristicas = []
+
+def pergunta(perg,var,carac):
+        cond = bool(input(perg))
+        carac.append(var)
+        return cond
+#-----------------------------------------------------------#
+if (pergunta("Seu objeto é um eletronico?", "eletronico",caracteristicas)):
+        if(pergunta("Ele tem teclas?", "teclas",caracteristicas)):
+                print('fim')
+else:
+	if(pergunta("Seu objeto tem folhas", "folhas",caracteristicas)):
+		pergunta("Seu objeto é impreso por uma grafica","impresso",caracteristicas)
