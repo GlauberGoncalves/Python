@@ -23,6 +23,4 @@ btn.place(x=10, y=10)
 lb = Label(janela,width=30, text="oi")
 lb.place(x=10, y=80)
 
-
-
 janela.mainloop()
