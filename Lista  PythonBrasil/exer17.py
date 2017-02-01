@@ -1,11 +1,10 @@
 t = float(input('informe o tamanho em m² '))
-
+t = t + (t*0.1)
 def arredondar(numero):
     if numero > 0:
         if numero < 1:
             return 1
-        elif(numero - int(numero) > 0):
-            print('caiu aqui')
+        elif(numero - int(numero) > 0):            
             return int(numero) + 1
         
         else:
