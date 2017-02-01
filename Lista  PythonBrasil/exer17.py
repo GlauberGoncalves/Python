@@ -41,7 +41,15 @@ else:
 # as 2 latas
     l18 = (l//18)
     l36 = (((l / 18) - l18) * 18)/3.6
-    preco = 80*(l18)+ (25 *(arredondar(l36)))
-    print('voce precisara de %d latas e %d galoes ' %(l18, arredondar(l36)))
-    print('Preço: R$ %0.2f' %(preco))
-    print('---------------------------------------')
+    if l36 <= 3:
+        preco = 80*(l18)+ (25 *(arredondar(l36)))
+        print('voce precisara de %d latas e %d galoes ' %(l18, arredondar(l36)))
+        print('Preço: R$ %0.2f' %(preco))
+        print('---------------------------------------')
+    else:
+        preco = 80 * l18
+        l18 += 1
+        l36 = 0
+        print('voce precisara de %d latas e %d galoes ' %(l18, arredondar(l36)))
+        print('Preço: R$ %0.2f' %(preco))
+        print('---------------------------------------')        
